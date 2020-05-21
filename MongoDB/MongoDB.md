@@ -57,6 +57,12 @@ _MongoDB automatically takes care of_ :
 - To start the shell, run the mongo executable: $ mongo
 - MongoDB Shell is a full-featured JavaScript interpreter, capable of running arbitrary JavaScript programs and also a standalone MongoDB client
 - **On startup, the shell connects to the test database on a MongoDB serve, and assigns this database connection to the global variable db, which is the primary access point to your MongoDB server through the shell**
+- **Inserting and Saving Documents** : Inserts are the basic method for adding data to MongoDB To insert a document into a collection, use the collection’s insert method: db.foo.insert({"bar" : "baz"})
+- **Removing Documents** : db.foo.remove() will remove all of the documents in the foo collection. This doesn’t actually remove the collection, and any meta information about it will still exist
+- db.mailing.list.remove({"opt-out" : true}) will delete mailing.list collection where the value for "optout“ is true
+
+
+
 
 **Shell Commands**
   - Current databse : db
@@ -66,8 +72,19 @@ _MongoDB automatically takes care of_ :
         cursor = db.somCollection.find();
         while ( cursor.hasNext() ) { printjson( cursor.next() ); }
 
+ **id and ObjectId**
+ - Every document stored in MongoDB must have an "id" key. The "id" key’s value can be any type, but it defaults to an ObjectId
+ - In a collection, every document must have a unique value for "id“, Which ensures that every document can be uniquely identified. That is, if you had two collections, each one could have a document where the value for "id" was 123
+However, neither collection could contain more than one document with an "id" of 123
 
+## **CRUD Methods**:  **db.[collection].[method]( [filter], [options])**
   
+- **db** : current database, **collection** : name of the target collection for method, **method** : desired method, **options** : operation perfromed
+
+
+
+
+
 
 
 
