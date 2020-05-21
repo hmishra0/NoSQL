@@ -43,7 +43,7 @@ _MongoDB automatically takes care of_ :
 ## **Collections**
 
 - A collection is a group of documents. If a document is the MongoDB analog of some row in a relational database, A collection can be thought of as the analog to a table
-- MongoDB collections do not have a predefined schema, since documents are self describing
+- MongoDB collections do not have a **predefined schema**, since documents are self describing
 
 ## **Databases**
 
@@ -56,7 +56,7 @@ _MongoDB automatically takes care of_ :
 - MongoDB comes with a JavaScript shell that allows interaction from the command line
 - To start the shell, run the mongo executable: $ mongo
 - MongoDB Shell is a full-featured JavaScript interpreter, capable of running arbitrary JavaScript programs and also a standalone MongoDB client
-- On startup, the shell connects to the test database on a MongoDB serve, and assigns this database connection to the global variable db, which is the primary access point to your MongoDB server through the shell
+- **On startup, the shell connects to the test database on a MongoDB serve, and assigns this database connection to the global variable db, which is the primary access point to your MongoDB server through the shell**
 
 **Shell Commands**
   - Current databse : db
