@@ -95,8 +95,47 @@ However, neither collection could contain more than one document with an "id" of
 ### **READ** 
 - Read operations retrieves documents from a collection; i.e. queries a collection for documents: **db.collection.find()**
 - To select all documents in the collection pass empty document as query filter parameter: **db.inventory.find({})**
+- **Read Methods**
+  - $eq : Matches values that are equal to a specified value.
+  - $gt : Matches values that are greater than a specified value.
+  - $gte : Matches values that are greater than or equal to a specified value.
+  - $in : Matches any of the values specified in an array.
+  - $lt : Matches values that are less than a specified value.
+  - $lte : Matches values that are less than or equal to a specified value.
+  - $ne : Matches all values that are not equal to a specified value.
+  - $nin : Matches none of the values specified in an array.
 
+### **UPDATE**
+- Update operations modify existing documents in a collection
+- Methods: 
+  - db.collection.updateOne(<filter>, <update>, <options>)
+  - db.collection.updateMany(<filter>, <update>, <options>)
+  - db.collection.replaceOne(<filter>, <replacement>, <options>)
+- Write operations in MongoDB are atomic on the level of a single document
+- MongoDb allows to specify criteria, or filters, that identify the documents to update
+   - example : db.users.updatemany({age : {$lt : 18 }}, {$set : {status : 'reject'}})
+   - Note : $set, will create the field if the field does not exist
+- **Update Operators** Fields
+   - $currentDate : Sets the value of a field to current date, either as a Date or a Timestamp.
+   - $inc : Increments the value of the field by the specified amount.
+   - $min : Only updates the field if the specified value is less than the existing field value.
+   - $max : Only updates the field if the specified value is greater than the existing field value.
+   - $mul : Multiplies the value of the field by the specified amount.
+   - $set : Sets the value of a field in a document.
+   - $unset : Removes the specified field from a document.
+  
+- **Update Operators** Arrays
+   - $addToSet : Adds elements to an array only if they do not already exist
+   - $pop : Removes the first or last item of an array.
+   - $pull : Removes all array elements that match a specified query.
+   - $pushAll : Deprecated. Adds several items to an array.
+   - $push : Adds an item to an array.
+   - $pullAll : Removes all matching values from an array.
 
+### **DELETE**
+- To remove all documents from a collection pass an empty filter document {} to the db.collection.deleteMany() method
+- Delete multiple : db.inventory.deleteMany({})
+- Delete single : db.inventory.deleteOne( { status: "D" } )
 
 
 
