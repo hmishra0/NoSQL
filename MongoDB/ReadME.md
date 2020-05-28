@@ -81,6 +81,28 @@ However, neither collection could contain more than one document with an "id" of
   
 - **db** : current database, **collection** : name of the target collection for method, **method** : desired method, **options** : operation perfromed
 
+### **CREATE** 
+- Create or insert operations add new documents to a collection and If the collection does not currently exist, insert operations will create the collection
+- Method: db.collection.insertOne() | db.collection.insertMany()
+- Example : 
+  - db.inventory.insertOne({ item: "canvas", qty: 100, tags: ["cotton"], size: { h: 28, w: 35.5, uom: "cm" } } )
+  - db.inventory.insertMany([
+               { item: "journal", qty: 25, tags: ["blank", "red"], size: { h: 14, w: 21, uom: "cm" } },
+               { item: "mat", qty: 85, tags: ["gray"], size: { h: 27.9, w: 35.5, uom: "cm" } },
+               { item: "mousepad", qty: 25, tags: ["gel", "blue"], size: { h: 19, w: 22.85, uom: "cm" }                                       }
+            ])
+
+### **READ** 
+- Read operations retrieves documents from a collection; i.e. queries a collection for documents: **db.collection.find()**
+- To select all documents in the collection pass empty document as query filter parameter: **db.inventory.find({})**
+
+
+
+
+
+
+
+
 
 
 
